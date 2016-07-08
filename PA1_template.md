@@ -26,13 +26,15 @@ medianSteps <- median(totalStepsByday$totalSteps)
 ggplot(totalStepsByday, aes(date, totalSteps, fill = months(date)))+
   geom_bar(stat="identity",position='dodge') +
   xlab("Date") + ylab("Steps")+
-  geom_hline(yintercept = meanSteps, col = "green") +
-  annotate("text", min(totalStepsByday$date), meanSteps-300, label = "mean") +
-  geom_hline(yintercept = medianSteps, col = "blue") +
-  annotate("text", min(totalStepsByday$date), medianSteps+400, label = "median")
+  geom_hline(yintercept = meanSteps+300, col = "green") +
+  annotate("text", min(totalStepsByday$date), meanSteps, label = "mean") +
+  geom_hline(yintercept = medianSteps -300, col = "blue") +
+  annotate("text", min(totalStepsByday$date), medianSteps, label = "median")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+
+The median is 10765 the mean is 1.0766189\times 10^{4}
 
 ## What is the average daily activity pattern?
 
